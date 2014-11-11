@@ -80,14 +80,14 @@ public class MainActivity extends Activity {
         }
         connector = new Connection();
         connector.execute(nickname);
-        String a=connector.result;
-        IdPlayer player = new IdPlayer();
-        player.Parse(a);
-        PLAYER.setId(player.getAccountId());
+        //String a=connector.result;
+        //IdPlayer player = new IdPlayer();
+        //player.Parse(a);
+        //PLAYER.setId(player.getAccountId());
         connectorForSecondRequest = new SecondConnection();
         connectorForSecondRequest.execute(PLAYER.getId());
-        String b=connectorForSecondRequest.result;
-        PLAYER.Parse(b,player);
+        //String b=connectorForSecondRequest.result;
+        //PLAYER.Parse(b,player);
     }
 
 
@@ -145,7 +145,7 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String str) {
             result=str;
             IdPlayer player = new IdPlayer();
-            player.Parse(result);
+            player.Parse(str);
         }
 
         @Override

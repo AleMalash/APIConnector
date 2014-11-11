@@ -23,8 +23,8 @@ public class IdPlayer {
     public void Parse(String in){
         try{
             JSONObject reader=new JSONObject(in);
-            String status=reader.getString("status");
-            if (status=="ok"){
+            String currentStatus=reader.getString("status");
+            if (currentStatus.equals("ok")){
                 this.setStatus(true);
                 JSONArray dataArray=reader.getJSONArray("data");
                 JSONObject data=dataArray.getJSONObject(0);
