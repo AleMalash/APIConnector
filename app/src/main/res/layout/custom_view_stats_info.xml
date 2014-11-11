@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/view_left_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+        >
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_nickname"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_registered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_registered"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_battles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_battles"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_rating"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_percent_win_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_percent_win"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_percent_hits_deal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_percent_hits_deal"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_damage_factor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_damage_factor"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_avg_damage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_avg_damage"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_percent_survived"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_percent_survived"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_frags_factor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_frags_factor"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_max_exp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_max_exp"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_avg_exp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_avg_exp"
+                android:textSize="@dimen/view_words_left"
+            />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_left_linear_max_damage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="@string/view_max_damage"
+                android:textSize="@dimen/view_words_left"
+            />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/view_right_linear"
+            android:layout_toEndOf="@id/view_left_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="1"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_registered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="2"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_battles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="3"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="4"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_percent_win_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="5"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_percent_hits_deal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="6"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_damage_factor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="7"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_avg_damage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="8"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_percent_survived"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="9"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_frags_factor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="10"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_max_exp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="11"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_avg_exp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="12"
+                android:textSize="@dimen/view_words_left"
+                />
+
+            <TextView
+                android:textColor="#FFDEAD"
+                android:id="@+id/view_right_linear_max_damage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_standard_margin_left"
+                android:layout_marginTop="@dimen/view_standard_margin_top"
+                android:text="13"
+                android:textSize="@dimen/view_words_left"
+                />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</ScrollView>

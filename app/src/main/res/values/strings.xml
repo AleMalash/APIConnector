@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">APIConnector</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="stats">Stats:</string>
+    <string name="write_name">Write name here</string>
+    <string name="main_activity_button_search">Search</string>
+
+    <string name="view_nickname">Nickname:</string>
+    <string name="view_registered">Registered:</string>
+    <string name="view_battles">Battles:</string>
+    <string name="view_rating">Rating:</string>
+    <string name="view_percent_win">Win rating, %:</string>
+    <string name="view_percent_hits_deal">Hits deal, %:</string>
+    <string name="view_damage_factor">Damage factor:</string>
+    <string name="view_avg_damage">Average damage:</string>
+    <string name="view_percent_survived">Survived, %:</string>
+    <string name="view_frags_factor">Frags factor:</string>
+    <string name="view_max_exp">Max experience:</string>
+    <string name="view_avg_exp">Average experience:</string>
+    <string name="view_max_damage">Max damage:</string>
+
+</resources>
