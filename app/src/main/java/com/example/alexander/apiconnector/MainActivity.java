@@ -36,6 +36,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class MainActivity extends Activity {
 
     public final Player PLAYER = new Player();
+    public final IdPlayer IDPLAYER = new IdPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,7 @@ public class MainActivity extends Activity {
 
     public void ButtonClickSearch(View v){
         EditText nickHere = (EditText) findViewById(R.id.main_activity_player_name);
+        ViewStatistics stat = (ViewStatistics) findViewById(R.id.main_activity_statistics);
         String nickname=nickHere.getText().toString();
 
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -76,18 +78,22 @@ public class MainActivity extends Activity {
             System.out.print("\n Connecting \n");
         }
         else {
-            System.out.print("\n Is not connecting \n");
+            System.out.print("\n Is not connection \n");
         }
         connector = new Connection();
         connector.execute(nickname);
-        //String a=connector.result;
-        //IdPlayer player = new IdPlayer();
-        //player.Parse(a);
-        //PLAYER.setId(player.getAccountId());
+        PLAYER.setId(IDPLAYER.getAccountId());
         connectorForSecondRequest = new SecondConnection();
         connectorForSecondRequest.execute(PLAYER.getId());
-        //String b=connectorForSecondRequest.result;
-        //PLAYER.Parse(b,player);
+
+        if (PLAYER.error+IDPLAYER.error==""){
+            //TextView nickName=(TextView) stat.findViewById(R.id.view_right_linear_nickname);
+            stat.populate(PLAYER);
+        } else{
+            nickHere.setText(PLAYER.error+IDPLAYER.error);
+        }
+
+
     }
 
 
@@ -97,11 +103,8 @@ public class MainActivity extends Activity {
 
         public final static int READ_TIMEOUT = 10000;
         public final static int CONNECT_TIMEOUT = 15000;
-
         public final static String REQUEST_METHOD = "GET";
-
         public final static String APPLICATION_ID = "297d31a41c65a8a7c4c10bd5c5d4200d";
-        public final static String URL_REQUEST_LIST = "https://api.worldoftanks.ru/wot/account/list/?application_id=" + APPLICATION_ID + "&rearch=";
 
         public Connection() {
             super();
@@ -109,10 +112,8 @@ public class MainActivity extends Activity {
 
         @Override
         protected String doInBackground(String... nickname) {
-
-
             try {
-                URL url = new URL("https://api.worldoftanks.ru/wot/account/list/?application_id=297d31a41c65a8a7c4c10bd5c5d4200d&search=Ale_Malash");
+                URL url = new URL("https://api.worldoftanks.ru/wot/account/list/?application_id=297d31a41c65a8a7c4c10bd5c5d4200d&search="+nickname);
                 HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
                 connection.setConnectTimeout(CONNECT_TIMEOUT);
                 connection.setReadTimeout(READ_TIMEOUT);
@@ -133,7 +134,7 @@ public class MainActivity extends Activity {
 
             }
 
-            return "Not working";
+            return "No connection";
         }
 
         @Override
@@ -144,8 +145,7 @@ public class MainActivity extends Activity {
         @Override
         protected void onPostExecute(String str) {
             result=str;
-            IdPlayer player = new IdPlayer();
-            player.Parse(str);
+            IDPLAYER.Parse(str);
         }
 
         @Override
@@ -172,9 +172,7 @@ public class MainActivity extends Activity {
 
         public final static int READ_TIMEOUT = 10000;
         public final static int CONNECT_TIMEOUT = 15000;
-
         public final static String REQUEST_METHOD = "GET";
-
         public final static String APPLICATION_ID = "297d31a41c65a8a7c4c10bd5c5d4200d";
         public final static String URL_REQUEST_INFO = "https://api.worldoftanks.ru/wot/account/info/?application_id=" + APPLICATION_ID + "&account_id=";
 
@@ -187,7 +185,7 @@ public class MainActivity extends Activity {
 
 
             try {
-                URL url = new URL(URL_REQUEST_INFO + id);
+                URL url = new URL("https://api.worldoftanks.ru/wot/account/info/?application_id=297d31a41c65a8a7c4c10bd5c5d4200d&account_id=" + id);
                 HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
                 connection.setConnectTimeout(CONNECT_TIMEOUT);
                 connection.setReadTimeout(READ_TIMEOUT);
@@ -208,7 +206,7 @@ public class MainActivity extends Activity {
 
             }
 
-            return "Not working";
+            return "No connection";
         }
 
         @Override
@@ -219,7 +217,7 @@ public class MainActivity extends Activity {
         @Override
         protected void onPostExecute(String str) {
             result=str;
-
+            PLAYER.Parse(str,IDPLAYER);
         }
 
         @Override

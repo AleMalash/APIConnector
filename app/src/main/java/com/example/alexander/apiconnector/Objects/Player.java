@@ -11,6 +11,8 @@ public class Player {
 
     public Player(){}
 
+    public String error="";
+
     private int id;
     public int getId(){return id;}
     public void setId(int id){this.id=id;}
@@ -102,6 +104,7 @@ public class Player {
                 this.setAverageExperience(all.getInt("battle_avg_xp"));
             } else{
                 this.setExist(false);
+                this.error+=" Wrong request searching info";
             }
         } catch (Exception e){
 

@@ -8,6 +8,8 @@ import org.json.JSONObject;
  */
 public class IdPlayer {
 
+    public String error="";
+
     private boolean status;
     public boolean getStatus(){return status;}
     public void setStatus(boolean status){this.status=status;}
@@ -32,6 +34,7 @@ public class IdPlayer {
                 this.setAccountId(data.getInt("account_id"));
             } else{
                 this.setStatus(false);
+                this.error+=" Wrong request searching id";
             }
         } catch (Exception e){
 
