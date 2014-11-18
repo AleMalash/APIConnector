@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+//merge
         <LinearLayout
             android:id="@+id/view_left_linear"
             android:layout_width="wrap_content"
@@ -193,7 +193,9 @@
                 android:textSize="@dimen/view_words_left"
                 />
 
+
             <TextView
+                style="@style/MyItem"
                 android:textColor="#FFDEAD"
                 android:id="@+id/view_right_linear_battles"
                 android:layout_width="wrap_content"

@@ -2,31 +2,19 @@ package com.example.alexander.apiconnector;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.alexander.apiconnector.Objects.IdPlayer;
 import com.example.alexander.apiconnector.Objects.Player;
 
-import org.json.JSONObject;
-import org.json.JSONStringer;
-
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.InputStream;
-import java.io.PrintWriter;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
@@ -64,12 +52,11 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    Connection connector;
+    Connection connectorForFirstRequest;
     SecondConnection connectorForSecondRequest;
 
     public void ButtonClickSearch(View v){
         EditText nickHere = (EditText) findViewById(R.id.main_activity_player_name);
-        ViewStatistics stat = (ViewStatistics) findViewById(R.id.main_activity_statistics);
         String nickname=nickHere.getText().toString();
 
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -78,22 +65,10 @@ public class MainActivity extends Activity {
             System.out.print("\n Connecting \n");
         }
         else {
-            System.out.print("\n Is not connection \n");
+            System.out.print("\n No connection \n"); //log
         }
-        connector = new Connection();
-        connector.execute(nickname);
-        PLAYER.setId(IDPLAYER.getAccountId());
-        connectorForSecondRequest = new SecondConnection();
-        connectorForSecondRequest.execute(PLAYER.getId());
-
-        if (PLAYER.error+IDPLAYER.error==""){
-            //TextView nickName=(TextView) stat.findViewById(R.id.view_right_linear_nickname);
-            stat.populate(PLAYER);
-        } else{
-            nickHere.setText(PLAYER.error+IDPLAYER.error);
-        }
-
-
+        connectorForFirstRequest = new Connection();
+        connectorForFirstRequest.execute(nickname);
     }
 
 
@@ -112,8 +87,12 @@ public class MainActivity extends Activity {
 
         @Override
         protected String doInBackground(String... nickname) {
+            String str = "";
             try {
-                URL url = new URL("https://api.worldoftanks.ru/wot/account/list/?application_id=297d31a41c65a8a7c4c10bd5c5d4200d&search="+nickname);
+                StringBuilder s=new StringBuilder("https://api.worldoftanks.ru/wot/account/list/?application_id=297d31a41c65a8a7c4c10bd5c5d4200d&search=");
+                s.append(nickname[0]);
+                String urlRequest=s.toString();
+                URL url = new URL(urlRequest);
                 HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
                 connection.setConnectTimeout(CONNECT_TIMEOUT);
                 connection.setReadTimeout(READ_TIMEOUT);
@@ -123,7 +102,7 @@ public class MainActivity extends Activity {
                 InputStream is = connection.getInputStream();
 
                 Scanner scanner = new Scanner(is);
-                String str = "";
+
 
                 str += scanner.nextLine();
 
@@ -146,6 +125,9 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String str) {
             result=str;
             IDPLAYER.Parse(str);
+            PLAYER.setId(IDPLAYER.getAccountId());
+            connectorForSecondRequest = new SecondConnection();
+            connectorForSecondRequest.execute(PLAYER.getId());
         }
 
         @Override
@@ -182,10 +164,11 @@ public class MainActivity extends Activity {
 
         @Override
         protected String doInBackground(Integer... id) {
-
-
+            StringBuilder s=new StringBuilder("https://api.worldoftanks.ru/wot/account/info/?application_id=297d31a41c65a8a7c4c10bd5c5d4200d&account_id=");
+            s.append(id[0]);
+            String urlRequest=s.toString();
             try {
-                URL url = new URL("https://api.worldoftanks.ru/wot/account/info/?application_id=297d31a41c65a8a7c4c10bd5c5d4200d&account_id=" + id);
+                URL url = new URL(urlRequest);
                 HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
                 connection.setConnectTimeout(CONNECT_TIMEOUT);
                 connection.setReadTimeout(READ_TIMEOUT);
@@ -216,8 +199,19 @@ public class MainActivity extends Activity {
 
         @Override
         protected void onPostExecute(String str) {
+            EditText nickHere = (EditText) findViewById(R.id.main_activity_player_name);
+            ViewStatistics stat = (ViewStatistics) findViewById(R.id.main_activity_statistics);
             result=str;
             PLAYER.Parse(str,IDPLAYER);
+            StringBuilder sb= new StringBuilder();
+            sb.append(PLAYER.error);
+            sb.append(IDPLAYER.error);
+            String error=sb.toString();
+            if (error.equals("")){
+                stat.populate(PLAYER);//TODO
+            } else{
+                nickHere.setText(error);
+            }
         }
 
         @Override

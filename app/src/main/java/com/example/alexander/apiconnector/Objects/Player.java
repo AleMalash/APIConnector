@@ -79,7 +79,7 @@ public class Player {
             JSONObject reader=new JSONObject(in);
 
             String status=reader.getString("status");
-            if (status=="ok"){
+            if (status.equals("ok")){
                 this.setExist(true);
 
                 JSONObject data=reader.getJSONObject("data");

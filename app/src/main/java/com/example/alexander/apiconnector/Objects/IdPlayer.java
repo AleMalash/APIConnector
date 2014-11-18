@@ -22,7 +22,7 @@ public class IdPlayer {
     public int getAccountId(){return accountId;}
     public void setAccountId(int accountId){this.accountId=accountId;}
 
-    public void Parse(String in){
+    public void Parse(String in){ //todo
         try{
             JSONObject reader=new JSONObject(in);
             String currentStatus=reader.getString("status");
