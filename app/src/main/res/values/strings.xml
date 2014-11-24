@@ -9,18 +9,18 @@
     <string name="main_activity_button_search">Search</string>
     <string name="main_activity_button_favorite">Favorite</string>
 
-    <string name="view_nickname">Nickname:</string>
-    <string name="view_registered">Registered:</string>
-    <string name="view_battles">Battles:</string>
-    <string name="view_rating">Rating:</string>
-    <string name="view_percent_win">Win rating, %:</string>
-    <string name="view_percent_hits_deal">Hits deal, %:</string>
-    <string name="view_damage_factor">Damage factor:</string>
-    <string name="view_avg_damage">Average damage:</string>
-    <string name="view_percent_survived">Survived, %:</string>
-    <string name="view_frags_factor">Frags factor:</string>
-    <string name="view_max_exp">Max experience:</string>
-    <string name="view_avg_exp">Average experience:</string>
-    <string name="view_max_damage">Max damage:</string>
+    <string name="nickname">Nickname:</string>
+    <string name="registered">Registered:</string>
+    <string name="battles">Battles:</string>
+    <string name="rating">Rating:</string>
+    <string name="percentWinRating">Win rating, %:</string>
+    <string name="percentHitsDeal">Hits deal, %:</string>
+    <string name="damageFactor">Damage factor:</string>
+    <string name="averageDamage">Average damage:</string>
+    <string name="percentSurvived">Survived, %:</string>
+    <string name="fragsFactor">Frags factor:</string>
+    <string name="maxExperience">Max experience:</string>
+    <string name="averageExperience">Average experience:</string>
+    <string name="maxDamage">Max damage:</string>
 
 </resources>
