@@ -9,67 +9,88 @@ import java.util.Date;
  */
 public class Player {
 
+    public String error="";
+    private int id;
+    private boolean exist;
+    private String nickname;
+    private String registered;
+    private int battles;
+    private int rating;
+    private int percentWinRating;
+    private int percentHitsDeal;
+    private int damageFactor;
+    private int averageDamage;
+    private int percentSurvived;
+    private int fragsFactor;
+    private int maxExperience;
+    private int averageExperience;
+    private int maxDamage;
     public Player(){}
 
-    public String error="";
+    public boolean isExist() {
+        return exist;
+    }
 
-    private int id;
-    public int getId(){return id;}
-    public void setId(int id){this.id=id;}
+    public int getId() {
+        return id;
+    }
 
-    private boolean exist;
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public boolean getExist(){return exist;}
+
     public void setExist(boolean exist){this.exist=exist;}
 
-    private String nickname;
     public String getNickname(){return nickname;}
+
     public void setNickname(String nickname){this.nickname=nickname;}
 
-    private String registered;
     public String getRegistered(){return registered;}
+
     public void setRegistered(String registered){this.registered=registered;}
 
-    private int battles;
     public int getBattles(){return battles;}
+
     public void setBattles(int battles){this.battles=battles;}
 
-    private int rating;
     public int getRating(){return rating;}
+
     public void setRating(int rating){this.rating=rating;}
 
-    private int percentWinRating;
     public int getPercentWinRating(){return percentWinRating;}
+
     public void setPercentWinRating(int percentWinRating){this.percentWinRating=percentWinRating;}
 
-    private int percentHitsDeal;
     public int getPercentHitsDeal(){return percentHitsDeal;}
+
     public void setPercentHitsDeal(int percentHitsDeal){this.percentHitsDeal=percentHitsDeal;}
 
-    private int damageFactor;
     public int getDamageFactor(){return damageFactor;}
+
     public void setDamageFactor(int damageFactor){this.damageFactor=damageFactor;}
 
-    private int averageDamage;
     public int getAverageDamage(){return averageDamage;}
+
     public void setAverageDamage(int averageDamage){this.averageDamage=averageDamage;}
 
-    private int percentSurvived;
     public int getPercentSurvived(){return percentSurvived;}
+
     public void setPercentSurvived(int percentSurvived){this.percentSurvived=percentSurvived;}
 
-    private int fragsFactor;
     public int getFragsFactor(){return fragsFactor;}
+
     public void setFragsFactor(int fragsFactor){this.fragsFactor=fragsFactor;}
 
-    private int maxExperience;
     public int getMaxExperience(){return maxExperience;}
+
     public void setMaxExperience(int maxExperience){this.maxExperience=maxExperience;}
 
-    private int averageExperience;
     public int getAverageExperience(){return averageExperience;}
+
     public void setAverageExperience(int averageExperience){this.averageExperience=averageExperience;}
 
-    private int maxDamage;
     public int getMaxDamage(){return maxDamage;}
     public void setMaxDamage(int maxDamage){this.maxDamage=maxDamage;}
 
