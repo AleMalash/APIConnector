@@ -44,39 +44,50 @@
             android:hint="@string/write_name"
         />
 
-        <Button
-            android:id="@+id/main_activity_button_search"
-            android:layout_centerHorizontal="true"
+        //при загрузке использовать progress bar
+        <LinearLayout
+            android:id="@+id/main_activity_linear_for_buttons"
             android:layout_below="@id/main_activity_player_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFDEAD"
-            android:text="@string/main_activity_button_search"
-            android:onClick="ButtonClickSearch"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+        >
+
+            <Button
+                android:id="@+id/main_activity_button_search"
+                android:layout_below="@id/main_activity_player_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFDEAD"
+                android:text="@string/main_activity_button_search"
+                android:onClick="ButtonClickSearch"
+                />
+            <Button
+                android:id="@+id/main_activity_button_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFDEAD"
+                android:text="@string/main_activity_button_favorite"
+                />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/main_activity_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:visibility="invisible"
+            android:layout_toLeftOf="@id/main_activity_linear_for_buttons"
         />
 
         <com.example.alexander.apiconnector.ViewStatistics
-            xmlns:v="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
-            android:id="@+id/main_activity_statistics"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/main_activity_button_search"
-            android:layout_marginTop="@dimen/view_standard_margin_top"
-            v:left_attr_nickname="@string/view_nickname"
-            v:left_attr_registered="@string/view_registered"
-            v:left_attr_battles="@string/view_battles"
-            v:left_attr_rating="@string/view_rating"
-            v:left_attr_percent_win_rating="@string/view_percent_win"
-            v:left_attr_percent_hits_deal="@string/view_percent_hits_deal"
-            v:left_attr_damage_factor="@string/view_damage_factor"
-            v:left_attr_avg_damage="@string/view_avg_damage"
-            v:left_attr_percent_survived="@string/view_percent_survived"
-            v:left_attr_frags_factor="@string/view_frags_factor"
-            v:left_attr_max_exp="@string/view_max_exp"
-            v:left_attr_avg_exp="@string/view_avg_exp"
-            v:left_attr_max_dmg="@string/view_max_damage"
+            android:layout_width="wrap_content"
+            xmlns:vs="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:id="@+id/main_activity_view_statistics"
+            android:visibility="invisible"
         />
-
-
     </RelativeLayout>
 </ScrollView>

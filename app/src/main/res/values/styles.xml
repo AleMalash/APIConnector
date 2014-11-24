@@ -9,4 +9,9 @@
         <item name="android:layout_width">match_parent</item>
     </style>
 
+    <style name="SmallItem">
+        <item name="android:textColor">#FFDEAD</item>
+        <item name="android:textSize">@dimen/view_words_left</item>
+    </style>
+
 </resources>

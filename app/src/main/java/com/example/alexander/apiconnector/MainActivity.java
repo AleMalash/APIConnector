@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import com.example.alexander.apiconnector.Objects.IdPlayer;
 import com.example.alexander.apiconnector.Objects.Player;
@@ -55,9 +57,12 @@ public class MainActivity extends Activity {
     Connection connectorForFirstRequest;
     SecondConnection connectorForSecondRequest;
 
+    //WRITE METHOD POPULATE TODO
+
     public void ButtonClickSearch(View v){
         EditText nickHere = (EditText) findViewById(R.id.main_activity_player_name);
         String nickname=nickHere.getText().toString();
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.main_activity_progress_bar);
 
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = connectivityManager.getActiveNetworkInfo();
@@ -68,6 +73,7 @@ public class MainActivity extends Activity {
             System.out.print("\n No connection \n"); //log
         }
         connectorForFirstRequest = new Connection();
+        progressBar.setVisibility(View.VISIBLE);
         connectorForFirstRequest.execute(nickname);
     }
 
@@ -199,8 +205,12 @@ public class MainActivity extends Activity {
 
         @Override
         protected void onPostExecute(String str) {
+
+            ViewStatistics customView=(ViewStatistics) findViewById(R.id.custom_view);
             EditText nickHere = (EditText) findViewById(R.id.main_activity_player_name);
             ViewStatistics stat = (ViewStatistics) findViewById(R.id.main_activity_statistics);
+            ProgressBar progressBar = (ProgressBar) findViewById(R.id.main_activity_progress_bar);
+
             result=str;
             PLAYER.Parse(str,IDPLAYER);
             StringBuilder sb= new StringBuilder();
@@ -208,7 +218,10 @@ public class MainActivity extends Activity {
             sb.append(IDPLAYER.error);
             String error=sb.toString();
             if (error.equals("")){
-                stat.populate(PLAYER);//TODO
+                customView.setVisibility(View.VISIBLE);
+                //populate должен быть и у viewSmall и у ViewStatistics
+                customView.populate(PLAYER);//TODO visibility of ViewStatistics
+                progressBar.setVisibility(View.INVISIBLE);
             } else{
                 nickHere.setText(error);
             }

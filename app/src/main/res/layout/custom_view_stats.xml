@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/custom_view_stats_upper"
+        android:visibility="invisible">
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_nickname"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_nickname"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_registered"
+            android:layout_below="@id/custom_view_stats_nickname"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_registered"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_battles"
+            android:layout_below="@id/custom_view_stats_registered"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_battles"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_rating"
+            android:layout_below="@id/custom_view_stats_battles"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_rating"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_percent_win_rating"
+            android:layout_below="@id/custom_view_stats_rating"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_percent_win"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_percent_hits_deal"
+            android:layout_below="@id/custom_view_stats_percent_win_rating"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_percent_hits_deal"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_damage_factor"
+            android:layout_below="@id/custom_view_stats_percent_hits_deal"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_damage_factor"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_average_damage"
+            android:layout_below="@id/custom_view_stats_damage_factor"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_avg_damage"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_percent_survived"
+            android:layout_below="@id/custom_view_stats_average_damage"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_percent_survived"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_frags_factor"
+            android:layout_below="@id/custom_view_stats_percent_survived"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_frags_factor"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_max_experience"
+            android:layout_below="@id/custom_view_stats_frags_factor"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_max_exp"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_average_experience"
+            android:layout_below="@+id/custom_view_stats_max_experience"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_avg_exp"
+        />
+
+        <com.example.alexander.apiconnector.ViewSmall
+            android:id="@+id/custom_view_stats_max_damage"
+            android:layout_below="@+id/custom_view_stats_average_experience"
+            xmlns:cv="http://schemas.android.com/apk/res/com.example.alexander.apiconnector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            cv:attr_key="@string/view_max_damage"
+        />
+
+    </RelativeLayout>
+</merge>

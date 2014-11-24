@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="custom_view_stats_attrs">
+
+        <attr name="attr_nickname_key" format="integer"/>
+        <attr name="attr_nickname_value" format="integer"/>
+
+        <attr name="attr_registered_key" format="integer"/>
+        <attr name="attr_registered_value" format="integer"/>
+
+        <attr name="attr_battles_key" format="integer"/>
+        <attr name="attr_battles_value" format="integer"/>
+
+        <attr name="attr_rating_key" format="integer"/>
+        <attr name="attr_rating_value" format="integer"/>
+
+        <attr name="attr_percent_win_rating_key" format="integer"/>
+        <attr name="attr_percent_win_rating_value" format="integer"/>
+
+        <attr name="attr_percent_hits_deal_key" format="integer"/>
+        <attr name="attr_percent_hits_deal_value" format="integer"/>
+
+        <attr name="attr_damage_factor_key" format="integer"/>
+        <attr name="attr_damage_factor_value" format="integer"/>
+
+        <attr name="attr_average_damage_key" format="integer"/>
+        <attr name="attr_average_damage_value" format="integer"/>
+
+        <attr name="attr_percent_survived_key" format="integer"/>
+        <attr name="attr_percent_survived_value" format="integer"/>
+
+        <attr name="attr_frags_factor_key" format="integer"/>
+        <attr name="attr_frags_factor_value" format="integer"/>
+
+        <attr name="attr_max_experience_key" format="integer"/>
+        <attr name="attr_max_experience_value" format="integer"/>
+
+        <attr name="attr_average_experience_key" format="integer"/>
+        <attr name="attr_average_experience_value" format="integer"/>
+
+        <attr name="attr_max_damage_key" format="integer"/>
+        <attr name="attr_max_damage_value" format="integer"/>
+
+    </declare-styleable>
+</resources>
